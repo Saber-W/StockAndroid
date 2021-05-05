@@ -1,0 +1,67 @@
+<resources>
+    <string name="app_name">Stock Search</string>
+    <string name="edit_messgae">Enter a message</string>
+    <string name="button_send">Send</string>
+
+    <string name="nav_example1">Header</string>
+    <string name="nav_example2">Header and Footer</string>
+    <string name="nav_example3">States</string>
+    <string name="nav_example4">Expandable</string>
+    <string name="nav_example5">Grid with Header</string>
+    <string name="nav_example6">Expandable Grid</string>
+    <string name="nav_example7">SearchView</string>
+    <string name="nav_example8">Animations</string>
+    <string name="nav_example9">Payloads</string>
+
+    <string name="action_search">Search</string>
+
+    <string name="cd_app_icon">App icon</string>
+    <string name="cd_avatar_icon">Avatar icon</string>
+    <string name="cd_movie_icon">Movie icon</string>
+    <string name="cd_cloud_off">Cloud off icon</string>
+    <string name="cd_arrow_icon">Arrow icon</string>
+    <string name="cd_currency_icon">Currency icon</string>
+
+    <string name="world_topic">World</string>
+    <string name="biz_topic">Business</string>
+    <string name="tech_topic">Technology</string>
+    <string name="sports_topic">Sports</string>
+
+    <string name="top_rated_movies_topic">Top Rated Movies</string>
+    <string name="most_popular_movies_topic">Most Popular Movies</string>
+
+    <string name="group_title">Group #%1$s</string>
+
+    <string name="more">MORE</string>
+    <string name="see_more">See more..</string>
+    <string name="failed_load">Failed to load, tap to try again.</string>
+    <string name="empty_list">This section is empty.</string>
+
+    <string name="add">ADD</string>
+    <string name="clear">CLEAR</string>
+    <string name="remove">REMOVE</string>
+    <string name="shuffle">SHUFFLE</string>
+    <string name="loaded">LOADED</string>
+    <string name="loading">LOADING</string>
+    <string name="failed">FAILED</string>
+    <string name="empty">EMPTY</string>
+    <string name="cd_add_group">Add group</string>
+
+    <string name="info">INFO</string>
+    <string name="item_info_title">[Section Item Info]</string>
+    <string name="pos_in_section">Position in section:</string>
+    <string name="pos_in_adapter">Position in adapter:</string>
+    <string name="view_type">View type:</string>
+    <string name="has_header">Has header?</string>
+    <string name="has_footer">Has footer?</string>
+    <string name="header_pos">"Header position:</string>
+    <string name="footer_pos">"Footer position:</string>
+    <string name="section_info_title">[Section Info]</string>
+    <string name="close">CLOSE</string>
+
+    <string name="my_portfolio">MY PORTFOLIO</string>
+    <string name="watchlist">WATCHLIST</string>
+    <string name="coin">COIN</string>
+    <string name="holdings">HOLDINGS</string>
+    <string name="price">PRICE</string>
+</resources>

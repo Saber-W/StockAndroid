@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/data.js"></script>
+<script src="https://code.highcharts.com/stock/modules/drag-panes.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/indicators/indicators.js"></script>
+<script src="https://code.highcharts.com/stock/indicators/volume-by-price.js"></script>
+<div id="container" style="height: 100vh; min-width: 310px"></div>
+<script type="text/javascript">
+  	function setData(str) {
+    var datas = str.split(",,");
+    var data = [];
+    var k = 0;
+    var infom = [];
+    for (k; k < datas.length; k += 1) {
+      infom = datas[k].split(",");
+      data.push(infom);
+    }
+
+  // split the data set into ohlc and volume
+  var ohlc = [],
+    volume = [],
+    dataLength = data.length,
+    // set the allowed units for data grouping
+    groupingUnits = [[
+      'week',             // unit name
+      [1]               // allowed multiples
+    ], [
+      'month',
+      [1, 2, 3, 4, 6]
+    ]],
+
+    i = 0;
+
+  for (i; i < dataLength; i += 1) {
+    ohlc.push([
+      parseInt(data[i][0]), // the date
+      parseFloat(data[i][1]), // open
+      parseFloat(data[i][2]), // high
+      parseFloat(data[i][3]), // low
+      parseFloat(data[i][4]) // close
+    ]);
+
+    volume.push([
+      parseInt(data[i][0]), // the date
+      parseInt(data[i][5]) // the volume
+    ]);
+  }
+
+  data = [];
+  // create the chart
+  Highcharts.stockChart('container', {
+
+    rangeSelector: {
+      selected: 2
+    },
+
+    yAxis: [{
+      startOnTick: false,
+      endOnTick: false,
+      labels: {
+        align: 'right',
+        x: -3
+      },
+      title: {
+        text: 'OHLC'
+      },
+      height: '60%',
+      lineWidth: 2,
+      resize: {
+        enabled: true
+      }
+    }, {
+      labels: {
+        align: 'right',
+        x: -3
+      },
+      title: {
+        text: 'Volume'
+      },
+      top: '65%',
+      height: '35%',
+      offset: 0,
+      lineWidth: 2
+    }],
+
+    tooltip: {
+      split: true
+    },
+
+    plotOptions: {
+      series: {
+        dataGrouping: {
+          units: groupingUnits
+        }
+      }
+    },
+
+    series: [{
+      type: 'candlestick',
+      name: 'AAPL',
+      id: 'aapl',
+      zIndex: 2,
+      data: ohlc
+    }, {
+      type: 'column',
+      name: 'Volume',
+      id: 'volume',
+      data: volume,
+      yAxis: 1
+    }, {
+      type: 'vbp',
+      linkedTo: 'aapl',
+      params: {
+        volumeSeriesID: 'volume'
+      },
+      dataLabels: {
+        enabled: false
+      },
+      zoneLines: {
+        enabled: false
+      }
+    }, {
+      type: 'sma',
+      linkedTo: 'aapl',
+      zIndex: 1,
+      marker: {
+        enabled: false
+      }
+    }]
+  });
+}</script>
+</body>
+</html>
